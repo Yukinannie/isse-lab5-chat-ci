@@ -14,7 +14,7 @@ app.json.ensure_ascii = False
 
 FRONTEND_DIR = str(BASE_DIR / "frontend")
 
-DATA_DIR = BASE_DIR / "data"
+DATA_DIR = Path(os.environ.get("LAB5_DATA_DIR") or (BASE_DIR / "data"))
 DATA_FILE = DATA_DIR / "messages.json"
 
 DEEPSEEK_API_URL = "https://api.deepseek.com/chat/completions"
