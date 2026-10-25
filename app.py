@@ -150,7 +150,6 @@ def update_message(message_id):
 def delete_message(message_id):
     for index, record in enumerate(messages):
         if record["id"] == message_id:
-            del messages[index]
             save_messages()
             return jsonify({"deleted": message_id})
 
